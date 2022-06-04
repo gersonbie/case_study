@@ -1,0 +1,77 @@
+.scroll-x {
+  width: 100%;
+  overflow-x: auto;
+}
+.table {
+  margin-top: 2rem;
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 0.4rem;
+  overflow-x: scroll;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+    rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  text-align: left;
+  color: #3f4668;
+}
+
+.table thead tr {
+  box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px,
+    rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+}
+.table tr:nth-child(even) {
+  background-color: #5b60a507;
+}
+
+.table th {
+  font-weight: bold;
+}
+
+.table td,
+.table th {
+  padding: 16px;
+}
+.table tbody tr {
+  transition: all 150ms ease-in;
+  position: relative;
+}
+
+.table tbody tr::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 0px;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 0px 0px 0px;
+  height: 100%;
+  transition: all 200ms ease-in-out;
+  background-color: var(--main-blue);
+}
+.table tbody tr:hover {
+  box-shadow: #002f6831 0px 0px 0px 1px inset,
+    rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  z-index: 1;
+}
+.table tbody tr:hover::after {
+  width: 6px;
+}
+
+.small-circle {
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  background-color: black;
+  margin-right: 0.5rem;
+}
+.small-circle.enabled {
+  background-color: var(--success);
+}
+.small-circle.disabled {
+  background-color: var(--error);
+}
+
+.table-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}

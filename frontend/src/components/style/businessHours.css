@@ -1,0 +1,5 @@
+.time-card input {
+  padding: 4px 8px;
+  max-width: 64px;
+  border: 1px solid #ddd;
+}

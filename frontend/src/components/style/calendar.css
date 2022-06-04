@@ -1,0 +1,58 @@
+.calendar {
+  margin-top: 2rem;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.calendar .list {
+  gap: 4px;
+}
+
+.calendar .month {
+  padding: 8px 1rem;
+  background-color: white;
+  color: black;
+  text-align: center;
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.calendar .month::before {
+  position: absolute;
+  right: 8px;
+  content: '';
+  fill: red;
+  opacity: 1;
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+}
+
+.month.pagamento {
+  background-color: #f4f6fa;
+  color: #959ba1;
+}
+
+.month.pagamento::before {
+  background: url('../../assets/svgs/credit-card.svg');
+  width: 24px;
+  height: 16px;
+}
+
+.month.teste {
+  background-color: #f4f6fa;
+  color: #959ba1;
+}
+.month.teste::before {
+  background: url('../../assets/svgs/free.svg');
+}
+
+.month.active {
+  background-color: #00b87f;
+  color: #ffffff;
+}

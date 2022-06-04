@@ -1,0 +1,25 @@
+.pagination button {
+  min-width: 36px;
+  background-color: white;
+  color: var(--main-blue);
+  box-shadow: #002f6831 0px 0px 0px 0px inset, rgba(17, 17, 26, 0.1) 0px 2px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: var(--main-blue);
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+.pagination button:hover,
+.pagination button.active {
+  background-color: var(--main-blue);
+  color: white;
+  fill: white;
+}
+.pagination button.current {
+  background-color: var(--main-blue);
+  color: white;
+  fill: white;
+}

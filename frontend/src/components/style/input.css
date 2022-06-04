@@ -1,0 +1,54 @@
+.text-input {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 16px;
+  position: relative;
+  transition: all 150ms ease-in-out;
+  box-shadow: #002f6831 0px 0px 0px 0px inset, rgba(17, 17, 26, 0.1) 0px 2px 0px;
+}
+.text-input:hover {
+  box-shadow: #002f6831 0px 0px 0px 1px inset,
+    rgba(51, 55, 90, 0.1) 0px 4px 6px -1px,
+    rgba(37, 49, 85, 0.06) 0px 2px 4px -1px;
+  z-index: 1;
+}
+.text-input.decoration::before {
+  display: none;
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 100%;
+  background: rgb(0, 47, 104);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 47, 104, 1) 0%,
+    rgba(24, 93, 194, 1) 50%,
+    #EE7F54 100%
+  );
+  border-radius: 4px;
+}
+
+.text-input label {
+  color: #2d3748;
+  margin-bottom: 8px;
+  color: #909090;
+  font-weight: 600;
+}
+
+.text-input input {
+  box-sizing: border-box;
+  border: none;
+  background-color: transparent;
+  color: #3d3d3d;
+  font-weight: 500;
+}
+.text-input input:focus + .control-label {
+  color: #f0a400;
+  background-color: red;
+}
+.text-input span {
+  color: red;
+}

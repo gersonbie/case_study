@@ -1,0 +1,83 @@
+.vendedor-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.vendedor-desc h2 {
+  color: #373b53;
+  font-weight: bold;
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.vendedor-desc p {
+  color: #a6acbe;
+}
+.vendedor-desc button {
+  border: none;
+  background-color: #002f68;
+  padding: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+.vendedor-desc h4 {
+  color: #373b53;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+.vendedor-registo {
+  padding: 16px;
+  margin-top: 24px;
+}
+.vendedor-registo-result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 34px;
+  margin-top: 16px;
+}
+
+#azul {
+  color: #002f68;
+}
+#verde {
+  color: green;
+}
+#vermelho {
+  color: red;
+}
+
+.vendedor-filtro {
+  background: #fff;
+  margin-top: 24px;
+}
+
+.data-filtro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  color: #747c81;
+  font-size: 16px;
+  font-weight: 700;
+}
+.data-filtro button {
+  color: white;
+  padding: 8px;
+  cursor: pointer;
+  border: none;
+  background-color: #002f68;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transform: 200ms;
+}
+.data-filtro button:hover {
+  background-color: #f1a300;
+}
+.data-filtro label {
+  font-size: 18px;
+}
