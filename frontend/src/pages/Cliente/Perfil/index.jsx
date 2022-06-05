@@ -4,21 +4,21 @@ import SellerIcon from "../../../assets/svgs/seller";
 import "./perfil.css";
 import { useParams } from "react-router-dom";
 import { APIKit } from "../../../services/api";
-import { funcoesUsuarioObject } from "../../../constants/dictionary";
-import { formatMoney } from "../../../utils";
+import { funcoesUsuarioObject, headersAtendimento } from "../../../constants/dictionary";
+import CustomTable from "../../../components/CustomTable";
 
 
 const Perfil = () => {
   const { usuario: localUser, logout, toast } = useAuth(useAuth);
   let { id } = useParams();
   const [fetchedUsuario, setUsuario] = useState(id ? null : localUser)
-
+  const [reservas, setReservas] = useState([])
   const fetchData = () => {
     APIKit.get(`/usuarios/${id}`)
       .then(response => setUsuario(response.data))
       .catch(() => toast.error("Erro ao Buscar usuários!"))
   }
-
+ 
   const setStatus = () => {
     fetchedUsuario.ativo
       ? APIKit.put(`/usuarios/${fetchedUsuario.id}`, { ativo: 0 })
@@ -50,14 +50,7 @@ const Perfil = () => {
         </div>
         <div className="flex-col profile-footer p-4">
           <div className="flex">
-            <div className="flex-col w-50">
-              <span className="blue-text font-bold ls-1">{fetchedUsuario?.empresas}</span>
-              <span className="text-opaque uppercase">MARCAÇÃO</span>
-            </div>
-            <div className="flex-col w-50">
-              <span className="blue-text font-bold ls-1">{formatMoney(fetchedUsuario?.receita)}</span>
-              <span className="text-opaque uppercase">Actualizar Documentos</span>
-            </div>
+          <CustomTable header={headersAtendimento} items={reservas?.items} />
           </div>
           <div className="flex mt-2">
             {id ? <>

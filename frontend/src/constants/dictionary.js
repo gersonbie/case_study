@@ -1,4 +1,4 @@
-import { dropdownToValueObject, isMonthPaid } from "../utils";
+import { dropdownToValueObject } from "../utils";
 
 export const tiposAtendimento = [
   { label: "Atendimento Geral", value: "Atendimento Gera" },
@@ -39,7 +39,7 @@ export const estadosUsuario = [
 export const estadosUsuarioObject = dropdownToValueObject(estadosUsuario);
 
 export const funcoesUsuario = [
-  { label: "Administrador", value: "admin" },
+  { label: "Funcionário", value: "admin" },
   { label: "Cliente", value: "client" },
 ];
 
@@ -71,6 +71,43 @@ export const headersClient = [
   {
     key: "ativo",
     label: "Estado",
+    component: (item) => (
+      <div className="flex items-center">
+        {item.ativo ? (
+          <>
+            <div className="small-circle enabled" />{" "}
+            {estadosUsuarioObject[item.ativo ? 1 : 0].label}
+          </>
+        ) : (
+          <>
+            <div className="small-circle disabled" />{" "}
+            {estadosUsuarioObject[item.ativo ? 1 : 0].label}
+          </>
+        )}
+      </div>
+    ),
+  },
+];
+
+export const headersAtendimento = [
+  {
+    key: "provincia",
+    label: "Província",
+    component: (item) => provinciaObject[item.provincia].label,
+  },
+  {
+    key: "agency",
+    label: "Agência",
+    component: (item) => tiposAgenciaObject[item.agency].label,
+  },
+  {
+    key: "tipo",
+    label: "Tipo de Atendimento",
+    component: (item) => tiposEmpresaObject[item.tipo].label,
+  },
+  {
+    key: "ativo",
+    label: "Validade",
     component: (item) => (
       <div className="flex items-center">
         {item.ativo ? (

@@ -1,10 +1,11 @@
 .container.perfil {
   min-height: 100%;
+  margin-top: 180px;
 }
 .profile-card {
   width: 100%;
   border-radius: 4px;
-  max-width: 500px;
+  max-width: 800px;
   background-color: white;
   text-align: center;
   box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;

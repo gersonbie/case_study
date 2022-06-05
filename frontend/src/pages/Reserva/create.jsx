@@ -20,27 +20,17 @@ const CreateReserva = () => {
 
   const formik = useFormik({
     initialValues: {
-      nome: "",
-      tipo: "",
       provincia: "",
-      pacote: "",
+      agency: "",
+      tipo: "",
       descricao: "",
-      endereco: "",
-      email: "",
-      contacto: "",
-      website: "",
-      tempo_minimo: "",
+      time: "",
     },
     validationSchema: Yup.object({
-      nome: Yup.string().required("Campo Nome é obrigatório"),
-      tipo: Yup.string().required("Campo Tipo de Empresa é obrigatório"),
-      pacote: Yup.string().required("Campo Pacote é obrigatório"),
-      descricao: Yup.string().required("Campo Descrição é obrigatório"),
-      endereco: Yup.string().required("Campo Endereço é obrigatório"),
-      contacto: Yup.string().required("Campo Contacto é obrigatório"),
-      website: Yup.string(),
-      tempo_minimo: Yup.string().required("Campo obrigatório"),
-      email: Yup.string().email("Email inválido"),
+      provincia: Yup.string().required("Campo obrigatório"),
+      agency: Yup.string().required("Campo obrigatório"),
+      tipo: Yup.string().required("Campo obrigatório"),
+      time: Yup.string().required("Campo obrigatório"),
     }),
     onSubmit: async (values, { resetForm }) => {
       try {
@@ -117,6 +107,7 @@ const CreateReserva = () => {
             timeFormat="HH:mm"
             timeIntervals={15}
             timeCaption="time"
+            name="time"
             dateFormat="MMMM d, yyyy h:mm aa"
           />
         </div>
@@ -127,8 +118,6 @@ const CreateReserva = () => {
           placeholder="Digite a Resposta"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          value={formik.values.nome}
-          error={formik.touched.nome && formik.errors.nome}
         />
 
         <div className="flex">

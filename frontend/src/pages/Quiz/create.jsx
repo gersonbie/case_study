@@ -62,7 +62,7 @@ const CreateQuiz = () => {
   return (
     <div className="container">
       <div className="form-header">
-        <h2 className="gradient-text">Avaliação</h2>
+        <h2 className="gradient-text">Avaliação do Funcionário</h2>
       </div>
       <div className="mb-4">
         <h3 className="mb-1 gradient-text font-bold">Seguradora</h3>
